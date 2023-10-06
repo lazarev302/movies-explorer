@@ -40,6 +40,7 @@ function App() {
   // Все функции
 
   function getRegistration({ name, email, password }) {
+    setIsLoading(true)
     api
       .registrationUser(name, email, password)
       .then(() => {
@@ -52,9 +53,11 @@ function App() {
         setIsSuccess(false)
         console.log(error)
       })
+      .finally(() => setIsLoading(false))
   }
 
   function getLogin({ email, password }) {
+    setIsLoading(true)
     api
       .loginUser(email, password)
       .then((res) => {
@@ -71,9 +74,11 @@ function App() {
         setIsSuccess(false)
         console.log(error)
       })
+      .finally(() => setIsLoading(false))
   }
 
   function getLikeCard(card) {
+    console.log(card)
     api
       .addCardMovie(card)
       .then((addMovieCard) => {
@@ -87,6 +92,7 @@ function App() {
   }
 
   function getDeletedCard(card) {
+    console.log(card)
     api
       .deletedCardMovie(card._id)
       .then(() => {

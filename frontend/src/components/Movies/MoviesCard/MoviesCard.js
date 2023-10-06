@@ -12,15 +12,19 @@ function MoviesCard({
   onDeleteCard,
 }) {
   function onCardClick() {
+    console.log("click like")
     if (saved) {
       onDeleteCard(savedMovies.filter((m) => m.movieId === card.id)[0])
+      console.log(onDeleteCard)
     } else {
       getLikeCard(card)
+      console.log(getLikeCard)
     }
   }
 
   function onDelete() {
     onDeleteCard(card)
+    console.log(onDeleteCard)
   }
 
   const cardLikeButtonClassName = `${
@@ -62,11 +66,6 @@ function MoviesCard({
               onClick={onCardClick}
             ></button>
           )}
-
-          <button
-            className="card__like-button card__like-button_active card__like-delete"
-            type="button"
-          ></button>
 
           <div className="card__title-block">
             <h2 className="card__title">{card.nameRU}</h2>

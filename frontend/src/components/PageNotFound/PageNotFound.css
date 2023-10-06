@@ -55,6 +55,8 @@
   font-size: 14px;
   font-weight: 400;
   line-height: normal;
+  border: none;
+  background: transparent;
 }
 
 .button_type_to-main:hover {

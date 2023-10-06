@@ -5,6 +5,15 @@ import MoviesCard from "../MoviesCard/MoviesCard"
 import SearchErrText from "../../SearchErrText/SearchErrText"
 import "./MoviesCardList.css"
 import Preloader from "../../Preloader/Preloader"
+import {
+  DESKTOP_WIDTH,
+  PLANSHET_WIDTH,
+  COUNT_TWELVE,
+  COUNT_EIGHT,
+  COUNT_FIVE,
+  COUNT_PLUS_THREE,
+  COUNT_PLUS_TWO,
+} from "../../../utils/constants"
 
 function MoviesCardList({
   isLoading,
@@ -24,23 +33,23 @@ function MoviesCardList({
 
   function getShowCardWidthDisplay() {
     const display = window.innerWidth
-    if (display > 1180) {
-      setShownMovies(12)
-    } else if (display > 767) {
-      setShownMovies(8)
+    if (display > DESKTOP_WIDTH) {
+      setShownMovies(COUNT_TWELVE)
+    } else if (display > PLANSHET_WIDTH) {
+      setShownMovies(COUNT_EIGHT)
     } else {
-      setShownMovies(5)
+      setShownMovies(COUNT_FIVE)
     }
   }
 
   function getShowMovieCounterAddBtn() {
     const display = window.innerWidth
-    if (display > 1180) {
-      setShownMovies(shownMovies + 3)
-    } else if (display > 767) {
-      setShownMovies(shownMovies + 2)
+    if (display > DESKTOP_WIDTH) {
+      setShownMovies(shownMovies + COUNT_PLUS_THREE)
+    } else if (display > PLANSHET_WIDTH) {
+      setShownMovies(shownMovies + COUNT_PLUS_TWO)
     } else {
-      setShownMovies(shownMovies + 2)
+      setShownMovies(shownMovies + COUNT_PLUS_TWO)
     }
   }
 
