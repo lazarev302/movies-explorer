@@ -28,3 +28,11 @@ IP 158.160.53.76
 Frontend https://diplom.roma.nomoredomainsicu.ru
 
 Backend https://api.diplom.roma.nomoredomainsicu.ru
+
+## Ccылка на pullrequest
+
+https://github.com/lazarev302/movies-explorer/pull/1
+
+## Ccылка на репозиторий
+
+https://github.com/lazarev302/movies-explorer
